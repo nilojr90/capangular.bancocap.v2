@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { Cliente } from 'src/app/model/cliente.model';
 import { ButtonComponent } from 'src/app/component/button/button.component';
 import { AgGridAngular } from 'ag-grid-angular';
-import { ListClientesService } from 'src/app/service/list-clientes.service';
+import { ListClientesService } from 'src/app/service/list-cliente/list-clientes.service';
 
 @Component({
   selector: 'app-cliente-view',

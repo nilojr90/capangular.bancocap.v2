@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AbstractControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Cliente } from 'src/app/model/cliente.model';
+import { AddClienteService } from 'src/app/service/add-cliente/add-cliente.service';
 
 @Component({
   selector: 'app-cliente',
@@ -13,7 +14,10 @@ export class ClienteComponent implements OnInit {
   error: boolean = false;
   errorDesc: string = "";
 
-  constructor(private router: Router) { }
+  constructor(
+    private router: Router,
+    private addClienteService: AddClienteService
+  ) { }
 
   onCadastrar() {
     console.log(this.cliente.nome, this.cliente.cpf);
@@ -24,8 +28,9 @@ export class ClienteComponent implements OnInit {
       this.error = true;
       this.errorDesc = "Insira o CPF"
     }
-
     else {
+      this.addClienteService.execute(this.cliente);
+
       this.error = false;
       this.router.navigate(['/perfil']);
     }

@@ -1,9 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-/* import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatButtonModule} from '@angular/material/button';
-import {MatDatepickerModule} from '@angular/material/datepicker'; */
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -25,8 +23,15 @@ import { TransferenciaComponent } from './component/transferencia/transferencia.
 import { ExtratoComponent } from './component/extrato/extrato.component';
 import { ButtonComponent } from './component/button/button.component';
 import { CurrencyMaskModule } from 'ng2-currency-mask';
-import { ListClientesService } from './service/list-clientes.service';
-import { maskConfig, GOOGLE_URL } from './token';
+import { ListClientesService } from './service/list-cliente/list-clientes.service';
+import { API_URL } from './token';
+import { maskConfig, GOOGLE_URL } from './config';
+import { AddClienteService } from './service/add-cliente/add-cliente.service';
+import { AddContaService } from './service/add-conta/add-conta.service';
+import { ListContaService } from './service/list-conta/list-conta.service';
+import { ListOperacaoService } from './service/list-operacao/list-operacao.service';
+
+
 
 
 @NgModule({
@@ -55,14 +60,14 @@ import { maskConfig, GOOGLE_URL } from './token';
     AgGridModule.withComponents([]),
     BrowserAnimationsModule,
     CurrencyMaskModule,
-    /*  MatToolbarModule,
-     MatButtonModule,
-     MatDatepickerModule */
-
   ],
   providers: [
-    { provide: 'API_URL', useValue: GOOGLE_URL },
+    { provide: API_URL, useValue: GOOGLE_URL },
     ListClientesService,
+    AddClienteService,
+    AddContaService,
+    ListContaService,
+    ListOperacaoService,
   ],
   bootstrap: [AppComponent]
 })
