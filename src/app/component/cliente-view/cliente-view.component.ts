@@ -16,27 +16,27 @@ export class ClienteViewComponent implements OnInit {
     { field: 'nome', editable: true },
     { field: 'cpf', editable: true },
     {
-      headerName: 'Edit',
+      headerName: 'Editar',
       cellRenderer: 'buttonRenderer',
       cellRendererParams: {
         onClick: this.onEditButtonClick.bind(this),
-        label: 'Edit'
+        label: 'Editar'
       },
     },
     {
-      headerName: 'Save',
+      headerName: 'Salvar',
       cellRenderer: 'buttonRenderer',
       cellRendererParams: {
         onClick: this.onSaveButtonClick.bind(this),
-        label: 'Save'
+        label: 'Salvar'
       },
     },
     {
-      headerName: 'Delete',
+      headerName: 'Excluir',
       cellRenderer: 'buttonRenderer',
       cellRendererParams: {
         onClick: this.onDeleteButtonClick.bind(this),
-        label: 'Delete'
+        label: 'Excluir'
       },
     },
 
